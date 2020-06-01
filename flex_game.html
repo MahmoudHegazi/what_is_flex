@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+.container {
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 500px;
+  height: 500px;
+  border: 1px solid gray;
+  
+}
+
+
+.item {
+  height: 50px;
+  width: 50px;
+  border: 1px solid gray;
+}
+
+#one {
+  order: 1;
+
+}
+
+#two {
+ order: 2;  
+
+}
+
+#three {
+  order: 3;
+}
+
+/* use in js */
+.container_row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  border: 1px solid gray;
+  
+}
+
+.container_column {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  width: 500px;
+  height: 500px;
+  border: 1px solid gray;
+  
+}
+
+.container_rowreverse {
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  width: 500px;
+  height: 500px;
+  border: 1px solid gray;
+  
+}
+</style>
+</head>
+<body>
+
+<div class="container" id="myfriend">
+<div id="one" class="item">1</div>
+<div id="two" class="item">2</div>
+<div id="three" class="item">3</div>
+
+</div>
+<p>flex-direction: <span id="getdir"></span></p>
+<p>justify-content: <span id="getjust"></span></p>
+<button onclick="myrow()">Row</button>
+<button onclick="myreverse_c()">column reverse</button>
+<button onclick="myrow_reverse()">column</button>
+<button onclick="mycolumn_c()">row reverse</button>
+<script>
+
+let x = document.getElementById("myfriend");
+const showDirection = document.getElementById("getdir");
+const showJustify = document.getElementById("getjust");
+
+function myrow() {
+  x.className = "container_row";
+  showDirection.textContent = "row";
+  showJustify.textContent = "center";  
+}
+
+function myreverse_c() {
+  x.className = "container";
+  showDirection.textContent = "column-reverse";
+  showJustify.textContent = "flex-start";
+}
+
+function myrow_reverse() {
+  x.className = "container_column";
+  showDirection.textContent = "revervse";
+  showJustify.textContent = "flex-end";
+}
+
+function mycolumn_c() {
+  x.className = "container_rowreverse";
+  showDirection.textContent = "column";
+  showJustify.textContent = "flex-start";
+}
+</script>
+
+</body>
+</html>
